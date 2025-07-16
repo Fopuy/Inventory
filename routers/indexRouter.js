@@ -1,9 +1,8 @@
 const express = require('express');
-const Router = express.Router;
-const indexRouter = Router();
+const router = express.Router();
 
-indexRouter.get('/', (req, res) => {
-    res.render('index', { title: 'Express Inventory' });
-});
+const indexController = require('../controllers/indexController');
 
-module.exports = indexRouter;
+router.get('/', indexController.getAllCards);
+
+module.exports = router;

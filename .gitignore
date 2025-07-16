@@ -27,3 +27,5 @@ Thumbs.db
 # Build folders (just in case)
 dist/
 build/
+
+db/pool.js

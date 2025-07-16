@@ -1,19 +1,46 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 2rem;
-  background-color: #f4f4f4;
-}
-.container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 5px;
-}
-input, textarea {
-  display: block;
-  margin: 1rem 0;
-  width: 100%;
-  padding: 0.5rem;
-}
-button {
-  padding: 0.5rem 1rem;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-details {
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      background-color: #fafafa;
+    }
+
+    .card-details h4 {
+      margin: 0 0 5px;
+      font-size: 1.1em;
+    }
+
+    .card-details p {
+      margin: 2px 0;
+      font-size: 0.9em;
+      color: #333;
+    }

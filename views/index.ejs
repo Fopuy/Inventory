@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Card Inventory</title>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-    Hello World
+  <h1>My Pokémon Card Collection</h1>
+  <div class="card-grid">
+    <% cards.forEach(card => { %>
+      <div class="card">
+        <img src="<%= card.image_url %>" alt="<%= card.name %>">
+        <div class="card-details">
+          <h4><%= card.name %></h4>
+          <p><strong>Rarity:</strong> <%= card.rarity %></p>
+          <p><strong>Set:</strong> <%= card.set_name %></p>
+          <p><strong>Condition:</strong> <%= card.condition %></p>
+          <p><strong>Quantity:</strong> <%= card.quantity %></p>
+          <p><strong>Notes:</strong> <%= card.notes %></p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
 </body>
 </html>
