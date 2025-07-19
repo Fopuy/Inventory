@@ -1,7 +1,7 @@
 const pool = require("./pool");
 
 async function getAllCards() {
-  const { rows } = await pool.query("SELECT * FROM cards");
+  const { rows } = await pool.query("SELECT * FROM cards;");
   return rows;
 }
 

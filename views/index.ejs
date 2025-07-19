@@ -11,7 +11,7 @@
   <div class="card-grid">
     <% cards.forEach(card => { %>
       <div class="card">
-        <img src="<%= card.image_url %>" alt="<%= card.name %>">
+        <img src="https://pkmncards.com/wp-content/uploads/sv7_en_143_std.jpg" alt="<%= card.name %>">
         <div class="card-details">
           <h4><%= card.name %></h4>
           <p><strong>Rarity:</strong> <%= card.rarity %></p>
@@ -19,6 +19,7 @@
           <p><strong>Condition:</strong> <%= card.condition %></p>
           <p><strong>Quantity:</strong> <%= card.quantity %></p>
           <p><strong>Notes:</strong> <%= card.notes %></p>
+          <p><strong>Price:</strong> $<%= card.price %></p>
         </div>
       </div>
     <% }) %>

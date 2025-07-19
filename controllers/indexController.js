@@ -1,5 +1,4 @@
 const db = require("../db/queries");
-const { get } = require("../routers/indexRouter");
 
 const getAllCards = async (req, res) => {
     const checkQuery = JSON.stringify(req.query) === "{}";
@@ -16,10 +15,9 @@ const getAllCards = async (req, res) => {
     }
 
     const cards = await db.getAllCards();
-
     res.render("index", {
         title: "Pokemon Cards",
-        cards,
+        cards: cards,
     });
 };
 
