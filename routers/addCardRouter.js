@@ -7,5 +7,6 @@ router.get('/', (req, res) => {
     res.render('addCardForm', { title: 'Add Pokémon Card' });
 });
 router.post('/', addCardController.addCards);
+router.post('/:id/delete', addCardController.deleteCard);
 
 module.exports = router;

@@ -8,7 +8,13 @@ const addCards = async (req, res) =>{
         res.status(400).send("Card data is required");
         return;
     }
-  res.status(201).send("Card added successfully");
+  res.redirect('/');
 };
 
-module.exports = { addCards };
+const deleteCard = async (req, res) => {
+    const id = req.params.id;
+    await db.deleteCard(id);
+    res.redirect('/');
+}
+
+module.exports = { addCards, deleteCard };

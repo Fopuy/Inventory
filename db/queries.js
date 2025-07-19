@@ -13,6 +13,13 @@ async function addCards([name, rarity, set_name, condition, quantity, notes, pri
   );
 }
 
+async function deleteCard(id) {
+  await pool.query(
+    `DELETE FROM cards WHERE id = $1`,
+    [id]
+  )
+}
+
 module.exports = {
-  getAllCards, addCards
+  getAllCards, addCards, deleteCard
 };

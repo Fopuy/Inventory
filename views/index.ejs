@@ -8,10 +8,16 @@
 </head>
 <body>
   <h1>My Pokémon Card Collection</h1>
+  <a href="/add" class="add-button">+ Add Card</a>
   <div class="card-grid">
     <% cards.forEach(card => { %>
       <div class="card">
-        <img src="<%= card.image_url %>" alt="<%= card.name %>">
+        <div class="image-wrapper">
+          <form action="/add/<%= card.id %>/delete" method="POST" class="delete-form">
+            <button type="submit" class="delete-button">✖</button>
+          </form>
+          <img src="<%= card.image_url %>" alt="<%= card.name %>">
+        </div>
         <div class="card-details">
           <h4><%= card.name %></h4>
           <p><strong>Rarity:</strong> <%= card.rarity %></p>

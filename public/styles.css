@@ -1,7 +1,13 @@
     body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       padding: 20px;
+      
     }
 
     .card-grid {
@@ -16,6 +22,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       transition: transform 0.2s ease;
+      position: relative;
     }
 
     .card:hover {
@@ -45,7 +52,7 @@
       color: #333;
     }
 
-        body {
+    body {
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
       padding: 30px;
@@ -60,22 +67,28 @@
       max-width: 500px;
       margin: 0 auto;
       background-color: white;
-      padding: 20px;
+      padding: 30px; /* increased from 20px */
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-sizing: border-box;
     }
 
     label {
       display: block;
-      margin-top: 15px;
+      margin-top: 18px; /* increased spacing from label to previous input */
+      font-weight: bold;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 4px;
+      padding: 12px; /* increased from 8px */
+      margin-top: 6px; /* a little more breathing room under labels */
+      border-radius: 6px;
       border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 14px;
     }
 
     button {
@@ -90,6 +103,58 @@
       cursor: pointer;
     }
 
-    button:hover {
-      background-color: #45a049;
-    }
+  .image-wrapper {
+    position: relative;
+    overflow: hidden; 
+    border-radius: 10px; 
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+  }
+
+  .delete-form {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+  }
+
+  .delete-button {
+    all: unset; /* resets ALL button default styles */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    color: rgba(223, 140, 140, 0);
+    cursor: pointer;
+    z-index: 2;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    padding: 0;
+  }
+
+  .card:hover .delete-button {
+    color: rgba(255, 18, 18, 0.671);
+  }
+
+  .add-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
