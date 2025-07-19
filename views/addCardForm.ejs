@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Pokémon Card</title>
+</head>
+<body>
+  <h1>Add a Pokémon Card</h1>
+  <form action="/add" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" required />
+
+    <label for="rarity">Rarity</label>
+    <input type="text" name="rarity" required />
+
+    <label for="set_name">Set Name</label>
+    <input type="text" name="set_name" />
+
+    <label for="condition">Condition</label>
+    <select name="condition" required>
+      <option value="Mint">Mint</option>
+      <option value="Near Mint">Near Mint</option>
+      <option value="Good">Good</option>
+      <option value="Fair">Fair</option>
+      <option value="Poor">Poor</option>
+    </select>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" min="1" required />
+
+    <label for="price">Price</label>
+    <input type="number" name="price" min="0" step="0.01" />
+
+    <label for="image_url">Image URL</label>
+    <input type="url" name="image_url" />
+
+    <label for="notes">Notes</label>
+    <textarea name="notes" rows="3"></textarea>
+
+    <button type="submit">Add Card</button>
+  </form>
+</body>
+</html>

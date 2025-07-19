@@ -5,16 +5,16 @@ const getAllCards = async (req, res) => {
 
     if (!checkQuery) {
         const cards = await db.getAllCards(req.query);
-
+  
         res.render("index", {
             title: "Pokemon Cards",
             cards: cards,
         });
-
+        
         return;
     }
 
-    const cards = await db.getAllCards();
+    const cards = await db.getAllCards();   
     res.render("index", {
         title: "Pokemon Cards",
         cards: cards,
